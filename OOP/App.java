@@ -1,54 +1,118 @@
-package com.dmitrydrobysh.app;
-
-public class App {
+public class App{
     public static void main( String[] args ){
-        MyInteger integer = new MyInteger(5);
-        System.out.println(integer.getValue());
 
-        GameUnit unit1 = new GameUnit(50, 10);
-        GameUnit unit2 = new GameUnit(60, 20);
+        GameUnit unit1 = new GameUnit(300, 40, TypesGU.TANK);
+        GameUnit unit2 = new GameUnit(200, 50, TypesGU.HEALER);
 
-        System.out.println("Unit1");
-        System.out.println(unit1.getStrength());
-        System.out.println(unit1.getHealth());
-        
-        System.out.println("Unit2");
-        System.out.println(unit2.getStrength());
-        System.out.println(unit2.getHealth());
 
+        System.out.println("--Unit1--");
+        System.out.println("Unit1 strength: " + unit1.getStrength());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit1 health: " + unit1.getHealth());
+
+        System.out.println("--Unit2--");
+        System.out.println("Unit2 strength: " + unit2.getStrength());
+        System.out.println("Unit2 health: " + unit2.getHealth());
+
+        //------------------------------------
+
+        System.out.println("-- ROUND 1 --");
         System.out.println("Unit1 attacks Unit2");
         unit1.attack(unit2);
-       
-        System.out.println("Unit1");
-        System.out.println(unit1.getStrength());
-        System.out.println(unit1.getHealth());
-               
-        System.out.println("Unit2");
-        System.out.println(unit2.getStrength());
-        System.out.println(unit2.getHealth());
+        System.out.println("Unit1 health: " + unit1.getHealth());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit2 health: " + unit2.getHealth());
+
+        //------------------------------------
+
+        System.out.println("-- ROUND 2 --");
+        System.out.println("Unit2 attacks Unit1");
+        unit2.attack(unit1);
+
+        System.out.println("Unit1 health: " + unit1.getHealth());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit2 health: " + unit2.getHealth());
+
+        //------------------------------------
+
+        System.out.println("-- ROUND 3 --");
+        System.out.println("Unit1 attacks Unit2");
+        unit1.attack(unit2);
+
+        System.out.println("Unit1 health: " + unit1.getHealth());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit2 health: " + unit2.getHealth());
+
+        //------------------------------------
+
+        System.out.println("-- ROUND 4 --");
+        System.out.println("Unit2 attacks Unit1");
+        unit2.attack(unit1);
+
+        System.out.println("Unit1 health: " + unit1.getHealth());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit2 health: " + unit2.getHealth());
 
 
-        Tank tank = new Tank(1000, 50, 200);
-        System.out.println("Tank");
-        System.out.println(tank.getStrength());
-        System.out.println(tank.getHealth());
+        //------------------------------------
 
-        System.out.println("Tank attacks Unit2");
-        tank.attack(unit2);
+        System.out.println("-- ROUND 5 --");
+        System.out.println("Unit1 attacks Unit2");
+        unit1.attack(unit2);
 
-        System.out.println("Unit2");
-        System.out.println(unit2.getStrength());
-        System.out.println(unit2.getHealth());
+        System.out.println("Unit1 health: " + unit1.getHealth());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit2 health: " + unit2.getHealth());
 
-        System.out.println("Unit1 attacks Tank");
-        unit1.attack(tank);
+        //------------------------------------
 
-        System.out.println("Tank");
-        System.out.println(tank.getHealth());
-        System.out.println(tank.getStrength());
+        System.out.println("-- ROUND 6 --");
+        System.out.println("Unit2 attacks Unit1");
+        unit2.attack(unit1);
 
-        Tank.printObjLink(tank); // OK
-        //Tank.printObjLink(unit2); Error. Why?
+        System.out.println("Unit1 health: " + unit1.getHealth());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit2 health: " + unit2.getHealth());
+
+        //------------------------------------
+
+        System.out.println("-- ROUND 7 --");
+        System.out.println("Unit1 attacks Unit2");
+        unit1.attack(unit2);
+
+        System.out.println("Unit1 health: " + unit1.getHealth());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit2 health: " + unit2.getHealth());
+
+        //------------------------------------
+
+        System.out.println("-- ROUND 8 --");
+        System.out.println("Unit2 attacks Unit1");
+        unit2.attack(unit1);
+
+        System.out.println("Unit1 health: " + unit1.getHealth());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit2 health: " + unit2.getHealth());
+
+        //------------------------------------
+
+        System.out.println("-- ROUND 9 --");
+        System.out.println("Unit1 attacks Unit2");
+        unit1.attack(unit2);
+
+        System.out.println("Unit1 health: " + unit1.getHealth());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit2 health: " + unit2.getHealth());
+
+        //------------------------------------
+
+        System.out.println("-- ROUND 10 --");
+        System.out.println("Unit2 attacks Unit1");
+        unit2.attack(unit1);
+
+        System.out.println("Unit1 health: " + unit1.getHealth());
+        System.out.println("Unit1 shield: " + unit1.shield);
+        System.out.println("Unit2 health: " + unit2.getHealth());
 
 
     }
