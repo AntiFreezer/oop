@@ -31,6 +31,13 @@ public class WindFamily extends GameUnit {
         if (enemy instanceof GroundFamily) {
             coef = 3;
         }
-        ;
+        int damg = damage(enemy) * coef;
+        if(enemy.shield > 0){
+            enemy.shield -= damg;
+        }
+        else {
+            enemy.setHealth(enemy.getHealth() - damg);
+        }
+        System.out.println(damg);
     }
 }
