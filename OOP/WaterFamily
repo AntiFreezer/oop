@@ -28,6 +28,13 @@ public class WaterFamily extends GameUnit {
         if (enemy instanceof GroundFamily) {
             coef = 2;
         }
-        ;
+        int damg = damage(enemy) * coef;
+        if(enemy.shield > 0){
+            enemy.shield -= damg;
+        }
+        else {
+            enemy.setHealth(enemy.getHealth() - damg);
+        }
+        System.out.println(damg);
     }
 }
