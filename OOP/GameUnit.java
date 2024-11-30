@@ -1,4 +1,5 @@
 import java.util.Random;
+
 class GameUnit implements Funcs{
     private String name = "";
     private int health = 100;
@@ -7,7 +8,7 @@ class GameUnit implements Funcs{
     private int HEIGHT = 170;
     private TypesGU Type = TypesGU.DEFAULT_UNIT;
     private String Phrase = "HI";
-    int shield = 0;
+    private int shield = 0;
     public GameUnit(int health, int strength, TypesGU Type){
         this.health = health;
         this.strength = strength;
@@ -22,6 +23,15 @@ class GameUnit implements Funcs{
     public int getStrength(){
         return this.strength;
     }
+    public int getShield(){
+        return this.shield;
+    }
+    
+    public int setShield(int shield){
+        this.shield = shield;
+    }
+    
+    
     public void setStrength(int strength){
         this.strength = strength;
     }
@@ -31,8 +41,8 @@ class GameUnit implements Funcs{
     public void attack(GameUnit enemy){
         // But what to do if health is < 0 ???
         int damg = damage(enemy);
-        if(enemy.shield > 0){
-            enemy.shield -= damg;
+        if(enemy.getShield() > 0){
+            enemy.setShield(enemy.getShield - damg);
         }
         else {
             enemy.setHealth(enemy.health - damg);
